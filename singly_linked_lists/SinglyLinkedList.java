@@ -18,4 +18,18 @@ public class SinglyLinkedList {
 
 	// other methods
 
+	public void addBack(int val) {
+		Node node = new Node(val);
+		if(this.head == null) {
+			this.setHead(node);
+		}
+		else {
+			Node current = this.head;
+			while(current.hasNext()) {
+				current = current.getNext();
+			}
+			current.setNext(node);
+		}
+	}
+
 }
