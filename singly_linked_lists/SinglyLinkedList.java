@@ -17,6 +17,9 @@ public class SinglyLinkedList {
 	}
 
 	// other methods
+	// 	addBack
+	// 	printValues
+
 
 	public void addBack(int val) {
 		Node node = new Node(val);
@@ -29,6 +32,14 @@ public class SinglyLinkedList {
 				current = current.getNext();
 			}
 			current.setNext(node);
+		}
+	}
+
+	public void printValues() {
+		Node current = this.head;
+		while(current != null) {
+			System.out.println(current.getVal());
+			current = current.getNext();
 		}
 	}
 
