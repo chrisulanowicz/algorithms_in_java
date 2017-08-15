@@ -18,6 +18,7 @@ public class SinglyLinkedList {
 
 	// other methods
 	// 	addBack
+	//  addFront
 	// 	printValues
 
 
@@ -33,6 +34,14 @@ public class SinglyLinkedList {
 			}
 			current.setNext(node);
 		}
+	}
+
+	public void addFront(int val) {
+		Node node = new Node(val);
+		if(this.head != null) {
+			node.setNext(this.head);
+		}
+		this.setHead(node);
 	}
 
 	public void printValues() {

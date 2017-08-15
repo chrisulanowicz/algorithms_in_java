@@ -10,11 +10,17 @@ public class SinglyLinkedListTester {
 		// sll.setHead(testNode);
 		// System.out.println("List with a new Node added as the head: " + sll);
 		// System.out.println("The head which is now a node: " + sll.getHead());
+		sll.addFront(8);
+		System.out.println("printed values: ");
+		sll.printValues();
 		sll.addBack(4);
-		System.out.println("List with one node added: " + sll);
 		System.out.println("printed values: ");
 		sll.printValues();
 		sll.addBack(6);
+		System.out.println("printed values: ");
+		sll.printValues();
+		sll.addFront(5);
+		System.out.println("printed values: ");
 		sll.printValues();
 
 	}
