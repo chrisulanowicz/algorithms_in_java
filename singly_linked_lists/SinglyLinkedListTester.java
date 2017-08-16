@@ -22,6 +22,12 @@ public class SinglyLinkedListTester {
 		sll.addFront(5);
 		System.out.println("printed values: ");
 		sll.printValues();
+		sll.appendVal(9, 8);
+		System.out.println("printed values: ");
+		sll.printValues();
+		sll.appendVal(2, 1);
+		System.out.println("printed values: ");
+		sll.printValues();
 
 	}
 
