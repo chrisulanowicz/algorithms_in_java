@@ -19,7 +19,8 @@ public class SinglyLinkedList {
 	// other methods
 	// 	addBack
 	// 	addFront
-	//	appendVal
+	//	appendValue
+	//	prependValue
 	// 	printValues
 
 
@@ -47,7 +48,7 @@ public class SinglyLinkedList {
 
 	// function that inserts a new node immediately after an existing node with a given value
 	// if that value doesn't exist inside the list then just insert the new node at the end of the list
-	public void appendVal(int val, int after) {
+	public void appendValue(int val, int after) {
 		Node node = new Node(val);
 		if(this.head == null) {
 			this.setHead(node);
@@ -61,11 +62,47 @@ public class SinglyLinkedList {
 		current.setNext(node);
 	}
 
+	public void prependValue(int val, int before) {
+		Node node = new Node(val);
+		if(this.head == null) {
+			this.setHead(node);
+		}
+		else if(this.head.getVal() == before) {
+			node.setNext(this.head);
+			this.setHead(node);
+		}
+		else {
+			Node current = this.head;
+			while(current.hasNext() && current.getNext().getVal() != before) {
+				current = current.getNext();
+			}
+			node.setNext(current.getNext());
+			current.setNext(node);
+		}
+	}
+
 	public void printValues() {
+		System.out.println("printing values: ");
 		Node current = this.head;
 		while(current != null) {
 			System.out.println(current.getVal());
 			current = current.getNext();
+		}
+	}
+
+	public void printValues(boolean asString) {
+		if( asString == false) {
+			this.printValues();
+		}
+		else {
+			String listValues = "";
+			Node current = this.head;
+			while(current != null) {
+				listValues += current.getVal() + "->";
+				current = current.getNext();
+			}
+			listValues += "null";
+			System.out.println(listValues);
 		}
 	}
 
