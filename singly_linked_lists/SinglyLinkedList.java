@@ -22,6 +22,7 @@ public class SinglyLinkedList {
 	//	appendValue
 	//	prependValue
 	// 	printValues
+	//	removeValue
 
 
 	public void addBack(int val) {
@@ -106,4 +107,31 @@ public class SinglyLinkedList {
 		}
 	}
 
+	public Node removeValue(int val) {
+		Node current = this.head;
+		Node previous = null;
+		while(current != null && current.getVal() != val) {
+			previous = current;
+			current = current.getNext();
+		}
+		if(previous != null && current != null) {
+			previous.setNext(current.getNext());
+			current.setNext(null);
+		}
+		else if(current != null) {
+			this.setHead(current.getNext());
+			current.setNext(null);
+		}
+		return current;
+	}
+
 }
+
+
+
+
+
+
+
+
+
