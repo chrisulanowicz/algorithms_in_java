@@ -20,6 +20,7 @@ public class SinglyLinkedList {
 	// 	addBack
 	// 	addFront
 	//	appendValue
+	//	back
 	//	prependValue
 	// 	printValues
 	//	removeValue
@@ -61,6 +62,17 @@ public class SinglyLinkedList {
 		}
 		node.setNext(current.getNext());
 		current.setNext(node);
+	}
+
+	public Integer back() {
+		Node current = this.head;
+		if(current == null) {
+			return null;
+		}
+		while(current.hasNext()) {
+			current = current.getNext();
+		}
+		return current.getVal();
 	}
 
 	public void prependValue(int val, int before) {

@@ -10,8 +10,10 @@ public class SinglyLinkedListTester {
 		// System.out.println("List with a new Node added as the head: " + sll);
 		// System.out.println("The head which is now a node: " + sll.getHead());
 		System.out.println(sll.removeValue(9)); // => null
+		System.out.println(sll.back()); // => null
 		sll.addFront(8);
 		sll.printValues(); // => 8
+		System.out.println(sll.back()); // => 8
 		sll.addBack(4);
 		sll.printValues(false); // => 8 \n 4
 		sll.addBack(6);
@@ -33,6 +35,7 @@ public class SinglyLinkedListTester {
 		System.out.println(sll.removeValue(22)); // => null
 		System.out.println(sll.removeValue(7)); // => Node object
 		sll.printValues(true); // => 5->8->9->4->6->2->3
+		System.out.println(sll.back()); // => 3
 	}
 
 }
