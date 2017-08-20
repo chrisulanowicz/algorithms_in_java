@@ -13,6 +13,8 @@ public class SinglyLinkedListTester {
 		System.out.println(sll.back()); // => null
 		System.out.println(sll.front()); // => null
 		System.out.println(sll.frontTernary()); // => null
+		System.out.println(sll.contains(2)); // => false
+		System.out.println(sll.isEmpty()); // => true
 		sll.addFront(8);
 		sll.printValues(); // => 8
 		System.out.println(sll.back()); // => 8
@@ -40,6 +42,9 @@ public class SinglyLinkedListTester {
 		System.out.println(sll.back()); // => 3
 		System.out.println(sll.front()); // => 5
 		System.out.println(sll.frontTernary()); // => 5
+		System.out.println(sll.contains(34)); // => false
+		System.out.println(sll.contains(4)); // => true
+		System.out.println(sll.isEmpty()); // => false
 	}
 
 }

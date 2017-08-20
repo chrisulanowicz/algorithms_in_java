@@ -21,8 +21,10 @@ public class SinglyLinkedList {
 	// 	addFront
 	//	appendValue
 	//	back
+	//	contains
 	//	front
 	//	frontTernary
+	//	isEmpty
 	//	prependValue
 	// 	printValues
 	//	removeValue
@@ -77,6 +79,17 @@ public class SinglyLinkedList {
 		return current.getVal();
 	}
 
+	public boolean contains(int val) {
+		Node current = this.head;
+		while(current != null) {
+			if(current.getVal() == val) {
+				return true;
+			}
+			current = current.getNext();
+		}
+		return false;
+	}
+
 	public Integer front() {
 		if(this.head == null) {
 			return null;
@@ -86,6 +99,16 @@ public class SinglyLinkedList {
 
 	public Integer frontTernary() {
 		return this.head == null ? null : this.head.getVal();
+	}
+
+	public boolean isEmpty() {
+		if(this.head == null) {
+			return true;
+		}
+		return false;
+
+		//ternary version
+		// return this.head == null ? true : false
 	}
 
 	public void prependValue(int val, int before) {
