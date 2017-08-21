@@ -25,6 +25,7 @@ public class SinglyLinkedList {
 	//	front
 	//	frontTernary
 	//	isEmpty
+	//	length
 	//	prependValue
 	// 	printValues
 	//	removeValue
@@ -109,6 +110,16 @@ public class SinglyLinkedList {
 
 		//ternary version
 		// return this.head == null ? true : false
+	}
+
+	public int length() {
+		int count = 0;
+		Node current = this.head;
+		while(current != null) {
+			count++;
+			current = current.getNext();
+		}
+		return count;
 	}
 
 	public void prependValue(int val, int before) {
