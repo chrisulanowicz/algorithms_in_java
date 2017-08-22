@@ -26,6 +26,7 @@ public class SinglyLinkedList {
 	//	frontTernary
 	//	isEmpty
 	//	length
+	//	maxToBack
 	//	prependValue
 	// 	printValues
 	//	removeValue
@@ -120,6 +121,29 @@ public class SinglyLinkedList {
 			current = current.getNext();
 		}
 		return count;
+	}
+
+	public void maxToBack() {
+		Node previous = null;
+		Node current = this.head == null ? new Node() : this.head;
+		Node max = current;
+		while(current.hasNext()) {
+			if(current.getNext().getVal() > max.getVal()) {
+				previous = current;
+				max = current.getNext();
+			}
+			current = current.getNext();
+		}
+		if(max != current) {
+			if( previous == null) {
+				this.setHead(max.getNext());
+			}
+			else {
+				previous.setNext(max.getNext());
+			}
+			current.setNext(max);
+			max.setNext(null);
+		}
 	}
 
 	public void prependValue(int val, int before) {

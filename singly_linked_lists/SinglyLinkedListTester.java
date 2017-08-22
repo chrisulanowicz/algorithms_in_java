@@ -16,10 +16,14 @@ public class SinglyLinkedListTester {
 		System.out.println("list contains val: " + sll.contains(2)); // => false
 		System.out.println("is list empty?: " + sll.isEmpty()); // => true
 		System.out.println("length is: " + sll.length()); // => 0
+		sll.maxToBack();
+		sll.printValues(); // => none
 		sll.addFront(8);
 		sll.printValues(); // => 8
 		System.out.println("back node is: " + sll.back()); // => 8
 		System.out.println("length is: " + sll.length()); // => 1
+		sll.maxToBack();
+		sll.printValues(); // => 8
 		sll.addBack(4);
 		sll.printValues(false); // => 8 \n 4
 		sll.addBack(6);
@@ -48,6 +52,8 @@ public class SinglyLinkedListTester {
 		System.out.println("list contains val: " + sll.contains(4)); // => true
 		System.out.println("is list empty?: " + sll.isEmpty()); // => false
 		System.out.println("length is: " + sll.length()); // => 7
+		sll.maxToBack();
+		sll.printValues(true); // => 5->8->4->6->2->3->9
 	}
 
 }
