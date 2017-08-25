@@ -1,3 +1,5 @@
+import java.util.Arrays;
+
 public class SinglyLinkedListTester {
 
 	public static void main(String[] args) {
@@ -18,6 +20,7 @@ public class SinglyLinkedListTester {
 		System.out.println("length is: " + sll.length()); // => 0
 		sll.maxToBack();
 		sll.printValues(); // => none
+		System.out.println(Arrays.asList(sll.minMaxAverage())); // [{min=null, max=null, average=NaN}]
 		sll.addFront(8);
 		sll.printValues(); // => 8
 		System.out.println("back node is: " + sll.back()); // => 8
@@ -54,6 +57,7 @@ public class SinglyLinkedListTester {
 		System.out.println("length is: " + sll.length()); // => 7
 		sll.maxToBack();
 		sll.printValues(true); // => 5->8->4->6->2->3->9
+		System.out.println(Arrays.asList(sll.minMaxAverage())); // [{min=2.0, max=9.0, average=5.28...}]
 	}
 
 }

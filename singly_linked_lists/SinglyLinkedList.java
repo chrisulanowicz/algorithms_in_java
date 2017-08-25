@@ -1,3 +1,5 @@
+import java.util.HashMap;
+
 public class SinglyLinkedList {
 
 	// main class constructors, getters, and setters
@@ -27,6 +29,7 @@ public class SinglyLinkedList {
 	//	isEmpty
 	//	length
 	//	maxToBack
+	//	minMaxAverage
 	//	prependValue
 	// 	printValues
 	//	removeValue
@@ -144,6 +147,29 @@ public class SinglyLinkedList {
 			current.setNext(max);
 			max.setNext(null);
 		}
+	}
+
+	public HashMap minMaxAverage() {
+		HashMap<String, Double> result = new HashMap<String, Double>();
+		Double min = null;
+		Double max = null;
+		Double sum = 0.0;
+		int len = this.length(); // using length method defined above
+		Node current = this.head;
+		while(current != null) {
+			if(min == null || current.getVal() < min) {
+				min = (double) current.getVal();
+			}
+			if(max == null || current.getVal() > max) {
+				max = (double) current.getVal();
+			}
+			sum += current.getVal();
+			current = current.getNext();
+		}
+		result.put("min", min);
+		result.put("max", max);
+		result.put("average", sum/len);
+		return result;
 	}
 
 	public void prependValue(int val, int before) {
