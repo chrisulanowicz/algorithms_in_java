@@ -11,6 +11,8 @@ public class SinglyLinkedListTester {
 		// sll.setHead(testNode);
 		// System.out.println("List with a new Node added as the head: " + sll);
 		// System.out.println("The head which is now a node: " + sll.getHead());
+		System.out.println("removed back node is: " + sll.removeBack()); // => null
+		System.out.println("removed front node is: " + sll.removeFront()); // => null
 		System.out.println("removed node is: " + sll.removeValue(9)); // => null
 		System.out.println("back node is: " + sll.back()); // => null
 		System.out.println("front node is: " + sll.front()); // => null
@@ -25,6 +27,12 @@ public class SinglyLinkedListTester {
 		sll.printValues(); // => 8
 		System.out.println("back node is: " + sll.back()); // => 8
 		System.out.println("length is: " + sll.length()); // => 1
+		System.out.println("removed back node is: " + sll.removeBack()); // => Node object
+		sll.printValues(); // => blank
+		sll.addFront(8);
+		System.out.println("removed front node is: " + sll.removeFront()); // => Node object
+		sll.printValues(); // => blank
+		sll.addFront(8);
 		sll.maxToBack();
 		sll.printValues(); // => 8
 		sll.addBack(4);
@@ -58,6 +66,10 @@ public class SinglyLinkedListTester {
 		sll.maxToBack();
 		sll.printValues(true); // => 5->8->4->6->2->3->9
 		System.out.println(Arrays.asList(sll.minMaxAverage())); // [{min=2.0, max=9.0, average=5.28...}]
+		System.out.println("removed back node is: " + sll.removeBack()); // => Node object
+		sll.printValues(true); // => 5->8->4->6->2->3
+		System.out.println("removed front node is: " + sll.removeFront()); // => Node object
+		sll.printValues(true); // => 8->4->6->2->3
 	}
 
 }

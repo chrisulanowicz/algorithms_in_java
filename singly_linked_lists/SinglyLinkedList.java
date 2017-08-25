@@ -32,6 +32,8 @@ public class SinglyLinkedList {
 	//	minMaxAverage
 	//	prependValue
 	// 	printValues
+	//	removeBack
+	//	removeFront
 	//	removeValue
 
 
@@ -214,6 +216,32 @@ public class SinglyLinkedList {
 			listValues += "null";
 			System.out.println(listValues);
 		}
+	}
+
+	public Node removeBack() {
+		Node current = this.head;
+		if(current == null) {
+			return current;
+		}
+		else if(!current.hasNext()) {
+			this.setHead(null);
+			return current;
+		}
+		while(current.getNext().hasNext()) {
+			current = current.getNext();
+		}
+		Node temp = current.getNext();
+		current.setNext(null);
+		return temp;
+	}
+
+	public Node removeFront() {
+		Node temp = this.head;
+		if(this.head != null) {
+			this.setHead(this.head.getNext());
+			temp.setNext(null);
+		}
+		return temp;
 	}
 
 	public Node removeValue(int val) {
