@@ -36,6 +36,7 @@ public class SinglyLinkedList {
 	//	removeFront
 	//	removeValue
 	//	splitOnValue
+	//	toArray
 
 
 	public void addBack(int val) {
@@ -285,6 +286,18 @@ public class SinglyLinkedList {
 			}
 		}
 		return sll2;
+	}
+
+	public int[] toArray() {
+		int[] sllArray = new int[this.length()];
+		Node current = this.head;
+		int index = 0;
+		while(current != null) {
+			sllArray[index] = current.getVal();
+			current = current.getNext();
+			index++;
+		}
+		return sllArray;
 	}
 
 }

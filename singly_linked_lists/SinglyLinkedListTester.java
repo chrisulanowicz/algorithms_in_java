@@ -70,6 +70,7 @@ public class SinglyLinkedListTester {
 		sll.printValues(true); // => 5->8->4->6->2->3
 		System.out.println("removed front node is: " + sll.removeFront()); // => Node object
 		sll.printValues(true); // => 8->4->6->2->3
+		System.out.println(Arrays.toString(sll.toArray())); // => [8,4,6,2,3]
 		SinglyLinkedList sll2 = sll.splitOnValue(9);
 		sll2.printValues(true); // => null
 		SinglyLinkedList sll3 = sll.splitOnValue(6);
