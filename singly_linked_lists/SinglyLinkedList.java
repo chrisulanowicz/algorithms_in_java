@@ -35,6 +35,7 @@ public class SinglyLinkedList {
 	//	removeBack
 	//	removeFront
 	//	removeValue
+	//	splitOnValue
 
 
 	public void addBack(int val) {
@@ -260,6 +261,30 @@ public class SinglyLinkedList {
 			current.setNext(null);
 		}
 		return current;
+	}
+
+	public SinglyLinkedList splitOnValue(int val) {
+
+		SinglyLinkedList sll2 = new SinglyLinkedList();
+		Node current = this.head;
+		if(current == null) {
+			return sll2;
+		}
+		else if(current.getVal() == val) {
+			sll2.setHead(current);
+			this.setHead(null);
+			return sll2;
+		}
+		while(current.hasNext()) {
+			if(current.getNext().getVal() == val) {
+				sll2.setHead(current.getNext());
+				current.setNext(null);
+			}
+			else {
+				current = current.getNext();
+			}
+		}
+		return sll2;
 	}
 
 }
